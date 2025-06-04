@@ -1,6 +1,6 @@
 # IsaPDF Editor
 
-Visor de Archivos PDF moderno y local, inspirado en Sejda, creado con Electron y React.
+Visor de Archivos PDF moderno y local, creado con Electron y React.
 
 ## 🚀 Funcionalidades
 - 📂 Cargar archivos PDF desde el equipo
