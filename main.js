@@ -2,6 +2,9 @@ const { app, BrowserWindow, ipcMain, dialog } = require('electron');
 const path = require('path');
 const os = require('os');
 const fsp = require('fs/promises');
+const { google } = require('googleapis');
+const { Client } = require('@microsoft/microsoft-graph-client');
+require('dotenv').config();
 
 // ===================== 🌍 Entorno =====================
 process.env.NODE_ENV = 'production';

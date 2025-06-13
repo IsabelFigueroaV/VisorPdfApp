@@ -4,17 +4,46 @@
   "description": "Aplicación de escritorio para visualizar y gestionar archivos PDF",
   "main": "main.js",
   "homepage": "./",
+  "scripts": {
+    "start": "concurrently \"cross-env PORT=3100 HTTPS=true BROWSER=none npm run react\" \"wait-on https://localhost:3100 && npm run electron\"",
+    "react": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "build:css": "tailwindcss -i ./src/index.css -o ./src/styles.css",
+    "watch:css": "tailwindcss -i ./src/index.css -o ./src/styles.css --watch",
+    "electron": "electron .",
+    "electron:prod": "electron .",
+    "dist": "npm run build && electron-builder"
+  },
   "dependencies": {
-    "@azure/msal-browser": "^4.13.1",
-    "@azure/msal-react": "^3.0.12",
     "@heroicons/react": "^2.2.0",
-    "@pnp/graph": "^4.14.0",
-    "@pnp/sp": "^4.14.0",
-    "cross-fetch": "^4.1.0",
+    "@microsoft/mgt-element": "^4.6.0",
+    "@microsoft/mgt-react": "^4.6.0",
+    "@microsoft/mgt-sharepoint-provider": "^4.6.0",
+    "@microsoft/microsoft-graph-client": "^3.0.7",
+    "@react-oauth/google": "^0.12.2",
+    "dotenv": "^16.0.3",
+    "googleapis": "^149.0.0",
     "pdfjs-dist": "^5.3.31",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
+    "querystring-es3": "^0.2.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-scripts": "^5.0.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/forms": "^0.5.10",
+    "@tailwindcss/typography": "^0.5.16",
+    "autoprefixer": "^10.4.21",
+    "concurrently": "^8.0.1",
+    "cross-env": "^7.0.3",
+    "electron": "^28.3.3",
+    "electron-builder": "^24.13.2",
+    "postcss": "^8.5.4",
+    "postcss-flexbugs-fixes": "^5.0.2",
+    "postcss-import": "^16.1.0",
+    "postcss-preset-env": "^10.2.0",
+    "react-app-rewired": "^2.2.1",
+    "tailwindcss": "^3.4.17",
+    "wait-on": "^7.0.1"
   },
   "browserslist": {
     "production": [
@@ -27,5 +56,27 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "build": {
+    "extends": null,
+    "appId": "com.isa.pdfviewer",
+    "productName": "PDF Desktop Viewer",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "build/**/*",
+      "main.js",
+      "preload.js",
+      "package.json",
+      "node_modules/googleapis/**/*",
+      "node_modules/@microsoft/**/*",
+      "node_modules/dotenv/**/*"
+    ],
+    "extraResources": [],
+    "win": {
+      "target": "nsis"
+    },
+    "asarUnpack": []
   }
 }
