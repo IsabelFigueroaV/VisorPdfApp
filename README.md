@@ -1,23 +1,33 @@
-# IsaPDF Editor
+# 📄 Visor PDF – Aplicación de Escritorio
 
-Visor de Archivos PDF moderno y local, creado con Electron y React.
+**Visor PDF** es una aplicación de escritorio construida con Electron y React, diseñada para visualizar archivos PDF de manera rápida, clara y moderna. Funciona completamente de forma local, sin requerir conexión a internet.
 
-## 🚀 Funcionalidades
-- 📂 Cargar archivos PDF desde el equipo
-- 💾 Guardar en la nube (integración futura)
-- 📜 Historial de archivos cargados
-- 📤 Exportar datos
-- 🧹 Limpiar o eliminar archivos temporales
+## 🚀 Tecnologías utilizadas
 
-## 🧱 Tecnologías
-- Electron
-- React
-- TailwindCSS
-- pdfjs-dist
+- [React](https://reactjs.org/)
+- [Electron](https://www.electronjs.org/)
+- [pdfjs-dist](https://github.com/mozilla/pdfjs-dist)
+- [Tailwind CSS](https://tailwindcss.com/) (para el diseño visual)
 
-## 🖥️ Uso en desarrollo
+## ✨ Funcionalidades
+
+- Visualización rápida y fluida de archivos PDF  
+- Interfaz limpia, minimalista y moderna  
+- Navegación por páginas  
+- Preparada para expansión futura: anotaciones, firmas, exportación
+
+## 📦 Cómo ejecutar en desarrollo
 
 ```bash
-npm install
-npm run dev
+ npm install
+ npm run start
 ```
+
+```bash
+ npm run build
+ npm run dist
+```
+
+🛠️ El ejecutable instalable se genera en la carpeta dist/ gracias a electron-builder.
+
+## 📘 Consulta el archivo GUIA_VISORPDF.md para más detalles.
